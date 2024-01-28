@@ -4,10 +4,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float speed;
+    private float speed = 3f;
 
-     [SerializeField]
-    private float lookSensitivity;
+    [SerializeField]
+    private float horizontalMouseSensitivity = 10f;
+
+    [SerializeField]
+    private float verticalMouseSensitivity = 10f;
 
     private PlayerMotor motor;
     private void Start()
@@ -26,5 +29,16 @@ public class PlayerController : MonoBehaviour
 
         motor.Move(velocity);
 
+        //Calculer la rotation horizontale du joueur (souris)
+        float YRot = Input.GetAxisRaw("Mouse X");
+        
+        Vector3 rotation =  new Vector3(0, YRot, 0) * horizontalMouseSensitivity;
+        motor.Rotate(rotation);
+
+        //Calculer la rotation verticale du joueur (on bouge seulement la camera sinon le joueur va se pencher)
+        float XRot = Input.GetAxisRaw("Mouse Y");
+        
+        Vector3 cameraRotation =  new Vector3(XRot, 0, 0) * verticalMouseSensitivity;
+        motor.RotateCamera(cameraRotation);
     }
 }
