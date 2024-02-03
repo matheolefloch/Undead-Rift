@@ -14,8 +14,10 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool isRunning = animator.GetBool("isRunning");
         bool isWalking = animator.GetBool("isWalking");
-        bool forwardPressed = Input.GetKey("q");
+        bool forwardPressed = Input.GetKey("w");
+        bool runPressed = Input.GetKey("left shift");
         
         if(!isWalking && forwardPressed)
         {
@@ -24,6 +26,14 @@ public class NewBehaviourScript : MonoBehaviour
         if(isWalking && !forwardPressed)
         {
             animator.SetBool("isWalking", false);
+        }
+        if(!isRunning && (forwardPressed && runPressed))
+        {
+            animator.SetBool("isRunning", true);
+        }
+        if(isRunning && (!forwardPressed || !runPressed))
+        {
+            animator.SetBool("isRunning", false);
         }
     }
 }
