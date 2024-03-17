@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 122851656}
   - component: {fileID: 122851655}
-  - component: {fileID: 122851654}
+  - component: {fileID: 122851657}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -138,14 +138,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &122851654
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122851653}
-  m_Enabled: 1
 --- !u!20 &122851655
 Camera:
   m_ObjectHideFlags: 0
@@ -206,12 +198,20 @@ Transform:
   m_GameObject: {fileID: 122851653}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 953.2011, y: 538.13257, z: -827.84357}
+  m_LocalPosition: {x: 957.0882, y: 543.2455, z: -1237.9688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &122851657
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122851653}
+  m_Enabled: 1
 --- !u!1 &803039861
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,50 +557,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866540251}
   m_CullTransparentMesh: 1
---- !u!1 &1112695272
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1112695274}
-  - component: {fileID: 1112695273}
-  m_Layer: 0
-  m_Name: AutoConnect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1112695273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1112695272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7f7c3397a3cdc341844104e5790b4cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1112695274
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1112695272}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 953.2011, y: 538.13257, z: 9.815134}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1124730643
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +657,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9.45, y: -9, z: 15}
+  m_LocalScale: {x: 9.45, y: 9, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -715,8 +671,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1139585914}
-  - component: {fileID: 1139585913}
-  - component: {fileID: 1139585912}
+  - component: {fileID: 1139585916}
+  - component: {fileID: 1139585915}
+  - component: {fileID: 1139585917}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -724,7 +681,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1139585912
+--- !u!4 &1139585914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139585911}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.6368217, y: 4.302822, z: -2.154344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1139585915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -733,28 +705,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1139585911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0110f245bfcfc7d459681f7bd9ebc590, type: 3}
+  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMessageSize: 16384
-  maxHandshakeSize: 3000
-  serverMaxMsgsPerTick: 10000
-  clientMaxMsgsPerTick: 1000
-  sendTimeout: 5000
-  receiveTimeout: 20000
-  noDelay: 1
-  sslEnabled: 0
-  sslProtocols: 3072
-  sslCertJson: ./cert.json
-  port: 7778
-  batchSend: 1
-  waitBeforeSend: 1
-  clientUseWss: 0
-  clientWebsocketSettings:
-    ClientPortOption: 0
-    CustomClientPort: 0
-  minimumLogLevel: 3
---- !u!114 &1139585913
+  offsetX: 0
+  offsetY: 0
+--- !u!114 &1139585916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -763,7 +719,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1139585911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a173517331127942945b262ed0334c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 615e6c6589cf9e54cad646b5a11e0529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
@@ -773,15 +729,15 @@ MonoBehaviour:
   sendRate: 60
   autoStartServerBuild: 0
   autoConnectClientBuild: 0
-  offlineScene: 
-  onlineScene: 
-  transport: {fileID: 1139585912}
+  offlineScene: Assets/Scenes/Multiplayer/mutliplayer offli.unity
+  onlineScene: Assets/Scenes/Multiplayer/Multi lobby.unity
+  transport: {fileID: 1139585917}
   networkAddress: localhost
-  maxConnections: 5
-  disconnectInactiveConnections: 1
+  maxConnections: 100
+  disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 7317383015845905650, guid: 656f36d0abde64645a3ba923f5b97c52, type: 3}
+  playerPrefab: {fileID: 7883181385480339534, guid: 656f36d0abde64645a3ba923f5b97c52, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
@@ -800,21 +756,43 @@ MonoBehaviour:
   evaluationMethod: 0
   evaluationInterval: 3
   timeInterpolationGui: 0
---- !u!4 &1139585914
-Transform:
+  showRoomGUI: 1
+  minPlayers: 1
+  roomPlayerPrefab: {fileID: -360064051829712788, guid: 656f36d0abde64645a3ba923f5b97c52, type: 3}
+  RoomScene: Assets/Scenes/Multiplayer/Multi lobby.unity
+  GameplayScene: Assets/Scenes/Multiplayer/Multi jeu.unity
+  _allPlayersReady: 0
+  roomSlots: []
+  clientIndex: 0
+--- !u!114 &1139585917
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139585911}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.6368217, y: 4.302822, z: -2.154344}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  port: 7777
+  DualMode: 1
+  NoDelay: 1
+  Interval: 10
+  Timeout: 10000
+  RecvBufferSize: 7361536
+  SendBufferSize: 7361536
+  FastResend: 2
+  ReceiveWindowSize: 4096
+  SendWindowSize: 4096
+  MaxRetransmit: 40
+  MaximizeSocketBuffers: 1
+  ReliableMaxMessageSize: 297433
+  UnreliableMaxMessageSize: 1194
+  debugLog: 0
+  statisticsGUI: 0
+  statisticsLog: 0
 --- !u!1 &1415975736
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +876,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1139585913}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Mirror.NetworkManager, Mirror
         m_MethodName: StartHost
         m_Mode: 1
@@ -1031,7 +1009,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1112695272}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -1423,4 +1401,3 @@ SceneRoots:
   - {fileID: 1124730647}
   - {fileID: 1139585914}
   - {fileID: 1719694363}
-  - {fileID: 1112695274}
