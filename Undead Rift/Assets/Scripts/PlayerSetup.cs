@@ -7,6 +7,8 @@ public class PlayerSetup : NetworkBehaviour
 {   
     
     [SerializeField] Behaviour[] ToDisable;
+    [SerializeField] GameObject ToEnable;
+
 
     void Start()
     {
@@ -17,6 +19,10 @@ public class PlayerSetup : NetworkBehaviour
             {
                 ToDisable[i].enabled = false;
             }
+        }
+        else 
+        {
+            ToEnable.SetActive(false);
         }
     }
 
