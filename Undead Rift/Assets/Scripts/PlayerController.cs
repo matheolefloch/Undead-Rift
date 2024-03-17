@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
         //Calculer la rotation verticale du joueur (on bouge seulement la camera sinon le joueur va se pencher)
         float XRot = Input.GetAxisRaw("Mouse Y");
+        XRot = Mathf.Clamp(XRot, -90f, 90f);
         
         Vector3 cameraRotation =  new Vector3(XRot, 0, 0) * verticalMouseSensitivity;
         motor.RotateCamera(cameraRotation);
