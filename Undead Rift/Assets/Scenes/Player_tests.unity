@@ -424,8 +424,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &682204850 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 128674, guid: 471247d5cf89b2c46bcde0f08524197e, type: 3}
@@ -585,7 +583,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c46fdf338d6c34489c971f1f6c0afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> Stashed changes
 --- !u!1 &1267909688
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,15 +689,12 @@ PrefabInstance:
       propertyPath: sceneId
       value: 1541048689
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
     - target: {fileID: 939934351116217286, guid: 8bcb7e9a451d62d4a8ccf1c338fdb3b4, type: 3}
-=======
     - target: {fileID: 128674, guid: 471247d5cf89b2c46bcde0f08524197e, type: 3}
       propertyPath: m_TagString
       value: decalage
       objectReference: {fileID: 0}
     - target: {fileID: 472912, guid: 471247d5cf89b2c46bcde0f08524197e, type: 3}
->>>>>>> Stashed changes
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -755,10 +749,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-<<<<<<< Updated upstream
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bcb7e9a451d62d4a8ccf1c338fdb3b4, type: 3}
-=======
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 128674, guid: 471247d5cf89b2c46bcde0f08524197e, type: 3}
       insertIndex: -1
@@ -978,7 +970,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999248231}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -986,9 +977,6 @@ SceneRoots:
   - {fileID: 175180546}
   - {fileID: 1267909690}
   - {fileID: 464638450}
-<<<<<<< Updated upstream
   - {fileID: 4847003964800121675}
-=======
   - {fileID: 1777679121}
   - {fileID: 58121720}
->>>>>>> Stashed changes
