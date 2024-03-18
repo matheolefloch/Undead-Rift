@@ -167,7 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSprint: 1
+  canJump: 1
   sprintKey: 304
+  jumpKey: 32
   walkSpeed: 3
   sprintSpeed: 6
   gravity: 30
@@ -175,6 +177,7 @@ MonoBehaviour:
   lookSpeedY: 2
   upperLookLimit: 80
   lowerLookLimit: 80
+  jumpForce: 8
 --- !u!1 &7876812575941251385
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,8 +44,10 @@ GameObject:
   - component: {fileID: 1564369634566335952}
   - component: {fileID: 986498516814810314}
   - component: {fileID: 1851827761599260674}
+  - component: {fileID: -6626415545049146861}
+  - component: {fileID: -3561899682022562652}
   m_Layer: 0
-  m_Name: Player
+  m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,6 +121,42 @@ MonoBehaviour:
   upperLookLimit: 80
   lowerLookLimit: 80
   jumpForce: 8
+--- !u!114 &-6626415545049146861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2488340428115785503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 2656897559
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
+--- !u!114 &-3561899682022562652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2488340428115785503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4dee23a53fda684bae90e9fee6d8018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  ToDisable:
+  - {fileID: 1851827761599260674}
+  - {fileID: 0}
+  ToEnable: {fileID: 0}
 --- !u!1 &2527974713032013615
 GameObject:
   m_ObjectHideFlags: 0
