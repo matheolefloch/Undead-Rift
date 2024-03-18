@@ -215,11 +215,12 @@ namespace Mirror
             }
         }
 
-         //public void connec(TMP_InputField s)
-        //{
-          //  networkAddress = s.text;
-        //}
-        public void solo() {
+        public GetString gl;
+        public void connec()
+        {
+            networkAddress = gl.connec();
+        }
+        public void solo() { // ds
             maxConnections = 1;
         }
         // virtual so that inheriting classes' Reset() can call base.Reset() too
