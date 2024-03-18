@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using TMPro;
 
 namespace Mirror
 {
@@ -82,8 +83,10 @@ namespace Mirror
         public Transport transport;
 
         /// <summary>Server's address for clients to connect to.</summary>
+        /// 
+   
         [FormerlySerializedAs("m_NetworkAddress")]
-        [Tooltip("Network Address where the client should connect to the server. Server does not use this for anything.")]
+        [Tooltip("Network Address where the client should connect to the server. Server does not use this for anything.")] 
         public string networkAddress = "localhost";
 
         /// <summary>The maximum number of concurrent network connections to support.</summary>
@@ -213,6 +216,13 @@ namespace Mirror
             }
         }
 
+        public void connec(TMP_InputField s)
+        {
+            networkAddress = s.text;
+        }
+        public void solo() {
+            maxConnections = 1;
+        }
         // virtual so that inheriting classes' Reset() can call base.Reset() too
         // Reset only gets called when the component is added or the user resets the component
         // Thats why we validate these things that only need to be validated on adding the NetworkManager here

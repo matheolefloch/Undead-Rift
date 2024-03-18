@@ -1,28 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
 
-public class CountPlayer : NetworkBehaviour
-{
-    public int players;
-    // Start is called before the first frame update
-    void Start()
-    {
-        players = 1;
-    }
+public class CountPlayer : MonoBehaviour
+{   
+    public GameObject[] playersArray;
 
-    void OnClientConnect()
+    public int FindPlayersByTag()
     {
-        players++;
-    }
-    void OnClientDisconnect()
-    {
-        players--;
+        playersArray = GameObject.FindGameObjectsWithTag("Player");
+        return playersArray.Length;
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
