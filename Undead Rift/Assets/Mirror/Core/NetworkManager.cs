@@ -4,7 +4,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
-using TMPro;
 
 namespace Mirror
 {
@@ -216,10 +215,10 @@ namespace Mirror
             }
         }
 
-        public void connec(TMP_InputField s)
-        {
-            networkAddress = s.text;
-        }
+         //public void connec(TMP_InputField s)
+        //{
+          //  networkAddress = s.text;
+        //}
         public void solo() {
             maxConnections = 1;
         }
