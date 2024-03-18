@@ -14,7 +14,7 @@ public class Launch1 : MonoBehaviour
     {
         TimerOn = false;
         player = 0;
-        MaxPlayer = pl.players;
+        MaxPlayer = pl.FindPlayersByTag();
     }
 
     void OnTriggerEnter(Collider other)
