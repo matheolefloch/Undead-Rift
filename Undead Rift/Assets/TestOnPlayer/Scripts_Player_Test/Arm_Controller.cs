@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player_Controller : MonoBehaviour
+public class Arm_Controller : MonoBehaviour
 {
     public bool CanMove {get; private set;} = true;
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
@@ -28,7 +28,7 @@ public class Player_Controller : MonoBehaviour
     [Header("Jumping Parameters")]
     [SerializeField] private float jumpForce = 8.0f;
 
-    private Camera playerCamera;
+    private Transform arms;
     private CharacterController characterController;
     private Animator animator;
 
@@ -39,14 +39,15 @@ public class Player_Controller : MonoBehaviour
 
     void Awake()
     {
-        playerCamera = GetComponentInChildren<Camera>();
+        arms = transform.Find("arms");
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
     void Start()
     {
-                animator = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -78,7 +79,7 @@ public class Player_Controller : MonoBehaviour
     {
         rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
         rotationX = Mathf.Clamp(rotationX, -upperLookLimit, lowerLookLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        arms.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
     }
 

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class AnimationStateController : MonoBehaviour
 {
+    CharacterController characterController;
     Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        characterController = GetComponentInParent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -16,9 +18,10 @@ public class AnimationStateController : MonoBehaviour
     {
         bool isRunning = animator.GetBool("IsRunning");
         bool isWalking = animator.GetBool("IsWalking");
+        bool isJumping = animator.GetBool("IsJumping");
         bool forwardPressed = Input.GetKey("w");
         bool runPressed = Input.GetKey("left shift");
-        //bool jumpPressed = Input.GetKey("space");
+        bool jumpPressed = Input.GetKey("space");
         
         if(!isWalking && forwardPressed)
         {
@@ -36,13 +39,14 @@ public class AnimationStateController : MonoBehaviour
         {
             animator.SetBool("IsRunning", false);
         }
-        /*if(ShouldJump)
+        if(jumpPressed && characterController.isGrounded)
         {
             animator.SetBool("IsJumping", true);
         }
-        if(!ShouldJump)
+        if(!jumpPressed && characterController.isGrounded)
         {
             animator.SetBool("IsJumping", false);
-        }*/
+        }
+        
     }
 }
