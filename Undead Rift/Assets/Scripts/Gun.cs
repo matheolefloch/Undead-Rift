@@ -6,11 +6,14 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     [SerializeField] private GunData gunData;
-    [SerializeField] private Transform muzzle;
+    [SerializeField] private ParticleSystem muzzleFlash;
+    [SerializeField] private GameObject ImpactEffect;
+    public Camera fpsCamera;
 
     float timeSinceLastShot;
     private void Start()
     {
+        gunData.reloading = false;
         PlayerShoot.shootInput += Shoot;
         PlayerShoot.reloadInput += StartReload;
     }
@@ -33,22 +36,23 @@ public class Gun : MonoBehaviour
         gunData.reloading = false;
     }
 
-    private bool CanShoot() => !gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 60f);
+    private bool CanShoot() {
+        return !gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 60f);
+    }
     public void Shoot()
     {
         if (gunData.currentAmmo > 0) 
-        { 
+        {
             if (CanShoot()) 
             {
-                if (Physics.Raycast(muzzle.position, transform.forward, out RaycastHit hitInfo, gunData.maxDistance))
+                if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out RaycastHit hitInfo, gunData.maxDistance))
                 {
-                    Debug.Log("catir");
                     IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>();
                     if (damageable != null) { 
-                        Debug.Log("catouche");
-                        Debug.Log("test dmg: " + gunData.damage);
                         damageable.TakeDamage(gunData.damage);
                     }
+                    GameObject ImpactGO = Instantiate(ImpactEffect,hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+                    Destroy(ImpactGO, 2f);
                 }
                 gunData.currentAmmo--;
                 timeSinceLastShot = 0;
@@ -60,10 +64,11 @@ public class Gun : MonoBehaviour
     private void Update()
     {
         timeSinceLastShot += Time.deltaTime;
-        Debug.DrawRay(muzzle.position, muzzle.forward*gunData.maxDistance);
+        Debug.DrawRay(fpsCamera.transform.position, fpsCamera.transform.forward*gunData.maxDistance);
     }
 
     private void OnGunShot()
     {
+        muzzleFlash.Play();
     }
 }
