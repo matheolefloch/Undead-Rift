@@ -7,7 +7,7 @@ public class PlayerSetup : NetworkBehaviour
 {   
     
     [SerializeField] Behaviour[] ToDisableOnline;
-    [SerializeField] GameObject ToDisableLocal;
+    // [SerializeField] GameObject ToDisableLocal;
 
 
     void Start()
@@ -20,10 +20,10 @@ public class PlayerSetup : NetworkBehaviour
                 ToDisableOnline[i].enabled = false;
             }
         }
-        else 
-        {
-            ToDisableLocal.SetActive(false);
-        }
+        // else 
+        //{
+          //  ToDisableLocal.SetActive(false);
+        //}
     }
 
     // Update is called once per frame
