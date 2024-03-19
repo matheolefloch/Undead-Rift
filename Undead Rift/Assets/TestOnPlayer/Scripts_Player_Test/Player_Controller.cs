@@ -30,7 +30,7 @@ public class Player_Controller : MonoBehaviour
 
     private Camera playerCamera;
     private CharacterController characterController;
-    private Animator animator;
+    //private Animator animator;
 
     private Vector3 moveDirection;
     private Vector2 currentInput;
@@ -44,12 +44,12 @@ public class Player_Controller : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
+/*
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
     }
-
+*/
     void Update()
     {
         if(CanMove)
@@ -60,7 +60,7 @@ public class Player_Controller : MonoBehaviour
             {
                 HandleJump();
             }
-            HandleAnimation();
+            //HandleAnimation();
 
             ApplyFinalMovements();
         }
@@ -90,7 +90,7 @@ public class Player_Controller : MonoBehaviour
             moveDirection.y = jumpForce;
         }
     }
-
+/*
     private void HandleAnimation()
     {
         bool isRunning = animator.GetBool("IsRunning");
@@ -114,6 +114,7 @@ public class Player_Controller : MonoBehaviour
         {
             animator.SetBool("IsRunning", false);
         }
+        
         if(ShouldJump)
         {
             animator.SetBool("IsJumping", true);
@@ -122,7 +123,7 @@ public class Player_Controller : MonoBehaviour
         {
             animator.SetBool("IsJumping", false);
         }
-    }
+    }*/
     
     private void ApplyFinalMovements()
     {

@@ -153,10 +153,8 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  ToDisable:
-  - {fileID: 1851827761599260674}
-  - {fileID: 0}
-  ToEnable: {fileID: 0}
+  ToDisableOnline: []
+  ToDisableLocal: {fileID: 0}
 --- !u!1 &2527974713032013615
 GameObject:
   m_ObjectHideFlags: 0
