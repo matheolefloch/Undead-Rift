@@ -6,8 +6,9 @@ using Mirror;
 public class PlayerSetup : NetworkBehaviour
 {   
     
-    [SerializeField] Behaviour[] ToDisableOnline;
-    [SerializeField] Behaviour[] ToDisableLocal;
+    [SerializeField] GameObject[] ToDisableOnline;
+    [SerializeField] Behaviour[] ToDisableOnlineBH;
+    [SerializeField] GameObject ToDisableLocal;
 
 
     void Start()
@@ -15,13 +16,14 @@ public class PlayerSetup : NetworkBehaviour
         // Si ce n'est pas le joueur local, on désactive ses composants.
         if (!isLocalPlayer) 
         {
-            foreach (var c in ToDisableOnline)
+            foreach (var c in ToDisableOnline )
+                c.SetActive(false);
+            foreach (var c in ToDisableOnlineBH)
                 c.enabled = false;
         }
         else 
         {
-            foreach (var c in ToDisableLocal)
-                c.enabled = false;
+            ToDisableLocal.SetActive(false);
         }
     }
 

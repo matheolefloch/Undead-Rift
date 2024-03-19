@@ -102,7 +102,7 @@ namespace Mirror
         }
 
         protected virtual void UpdateClient()
-        {
+        {   
             // client authority, and local player (= allowed to move myself)?
             if (!IsClientWithAuthority)
             {

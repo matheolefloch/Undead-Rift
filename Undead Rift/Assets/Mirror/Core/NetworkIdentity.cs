@@ -22,7 +22,6 @@ namespace Mirror
     // ForceShown = useful to have score NetworkIdentities that always broadcast
     //              to everyone etc.
     public enum Visibility { Default, ForceHidden, ForceShown }
-
     public struct NetworkIdentitySerialization
     {
         // IMPORTANT: int tick avoids floating point inaccuracy over days/weeks

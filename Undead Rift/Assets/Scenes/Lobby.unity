@@ -4904,7 +4904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb58a8c8940aca4d9a28d84892ed634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tex: {fileID: 0}
+  tex: {fileID: 1583350771}
 --- !u!135 &1073662692
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7045,7 +7045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1583350770
 RectTransform:
   m_ObjectHideFlags: 0
