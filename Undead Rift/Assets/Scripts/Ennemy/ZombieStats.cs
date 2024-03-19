@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieStats : Stats_Character, IDamageable
+public class ZombieStats : MonoBehaviour, IDamageable
 {
     public float health = 100f;
     public void TakeDamage(float damage)
