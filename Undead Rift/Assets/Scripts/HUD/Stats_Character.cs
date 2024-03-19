@@ -15,7 +15,7 @@ public class Stats_Character : MonoBehaviour
     {
         InitVariables(100);
     }
-    public void CheckHealth()
+    public virtual void CheckHealth()
     {
         if(health <= 0)
         {
