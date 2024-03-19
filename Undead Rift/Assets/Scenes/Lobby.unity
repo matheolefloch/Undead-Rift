@@ -5085,7 +5085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb58a8c8940aca4d9a28d84892ed634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pl: {fileID: 676582863}
   tex: {fileID: 556975737}
 --- !u!135 &1073662692
 SphereCollider:
