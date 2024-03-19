@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e25e3097d0cf3a4bb5cb96755aec7f5, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  name: 
-  damage: 0
-  maxDistance: 0
-  currentAmmo: 0
-  magSize: 0
-  fireRate: 0
-  reloadTime: 0
+  name: Pistol
+  damage: 12
+  maxDistance: 200
+  currentAmmo: 15
+  magSize: 15
+  fireRate: 500
+  reloadTime: 1.5
   reloading: 0
