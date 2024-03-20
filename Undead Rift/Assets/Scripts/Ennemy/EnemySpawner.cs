@@ -115,7 +115,7 @@ public class EnnemySpawner : MonoBehaviour
 
     private void CompletedWave()
     {
-        Debug.Log("Wave Completed");
+        Debug.Log($"Wave{currentWave} Completed");
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
