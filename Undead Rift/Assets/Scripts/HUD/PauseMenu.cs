@@ -20,7 +20,6 @@ public class PauseMenu : NetworkBehaviour
             if (GamePause)
             {
                 MenuUI.SetActive(false);
-                GamePause = false;
                 Locke();
             }
             else 
@@ -36,7 +35,16 @@ public class PauseMenu : NetworkBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        GamePause = false;
     }
+
+    public void Delocke() 
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        GamePause = true;
+    }
+
     public void Leave() 
     {
         if (!isClientOnly) 
@@ -46,7 +54,6 @@ public class PauseMenu : NetworkBehaviour
         else 
         {   
             networkManager.StopClient();
-            Debug.Log("test");
         }
     }
 }
