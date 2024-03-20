@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PauseMenu : MonoBehaviour
+using Mirror;
+public class PauseMenu : NetworkBehaviour
 {
     public static bool GamePause = false;
-    
+    private NetworkManager networkManager;
     public GameObject MenuUI;
 
+    private void Start()
+    {
+        networkManager = NetworkManager.singleton;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -32,5 +36,17 @@ public class PauseMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+    public void Leave() 
+    {
+        if (!isClientOnly) 
+        {
+            networkManager.StopHost();
+        }
+        else 
+        {   
+            networkManager.StopClient();
+            Debug.Log("test");
+        }
     }
 }
