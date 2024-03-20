@@ -5,6 +5,15 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+    #region
+    // code pour le zombie follow le joueur
+    public static Transform instance;
+
+    public void Awake()
+    {
+        instance = this.transform;
+    }
+    #endregion
     public static Action shootInput;
     public static Action reloadInput;
 

@@ -31,6 +31,11 @@ public class Stats_Character : MonoBehaviour, IDamageable
     {
         isDead = true;
     }
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
     public void SetHealthTo(int healthToSet)
     {
         health = healthToSet;

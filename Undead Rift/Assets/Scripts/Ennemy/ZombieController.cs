@@ -9,7 +9,7 @@ public class ZombieController : MonoBehaviour
     private NavMeshAgent agent = null;
     private Animator animator = null;
     private ZombieStats stats = null;
-    [SerializeField]private Transform target;
+    private Transform target;
     [SerializeField]private float stoppingDistance;
     [SerializeField] private float timeOfLastAttack = 0;
     private bool hasStopped = false;
@@ -77,5 +77,6 @@ public class ZombieController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         stats = GetComponent<ZombieStats>();
+        target = PlayerShoot.instance;
     }
 }
