@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stats_Character : MonoBehaviour
+public class Stats_Character : MonoBehaviour, IDamageable
 {
     // Set variables and function to use in Stats_Player
 
@@ -27,11 +27,11 @@ public class Stats_Character : MonoBehaviour
             health = maxHealth;
         }
     }
-    public void Die()
+    public virtual void Die()
     {
         isDead = true;
     }
-    private void SetHealthTo(int healthToSet)
+    public void SetHealthTo(int healthToSet)
     {
         health = healthToSet;
         CheckHealth();
@@ -41,15 +41,18 @@ public class Stats_Character : MonoBehaviour
         health -= damage;
         CheckHealth();
     }
+
     public void Heal(int heal)
     {
         health += heal;
         CheckHealth();
     }
-    public void InitVariables(int _maxHealth)
+    public virtual void InitVariables(int _maxHealth)
     {
         maxHealth = _maxHealth;
         SetHealthTo(maxHealth);
         isDead = false;
     }
+
+  
 }

@@ -49,7 +49,7 @@ public class Gun : MonoBehaviour
                 {
                     IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>();
                     if (damageable != null) { 
-                        damageable.TakeDamage(gunData.damage);
+                        damageable.TakeDamage((int)gunData.damage);
                     }
                     GameObject ImpactGO = Instantiate(ImpactEffect,hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
                     Destroy(ImpactGO, 2f);
