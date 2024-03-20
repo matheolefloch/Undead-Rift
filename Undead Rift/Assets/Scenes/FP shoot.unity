@@ -4062,13 +4062,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f487eba6ae8d664287dc4eb46b595e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waves:
+  - name: Wave1
+    enemiesAmount: 3
+    delay: 1
+    enemy: {fileID: 2650967677943526908, guid: b4ec8977eadc18d48a4bae2ffd3f772a, type: 3}
+  - name: Wave2
+    enemiesAmount: 5
+    delay: 1
+    enemy: {fileID: 2650967677943526908, guid: b4ec8977eadc18d48a4bae2ffd3f772a, type: 3}
+  timeBetweenWaves: 3
+  waveCountdown: 0
   spawners:
   - {fileID: 723927412}
   - {fileID: 125761814}
   - {fileID: 2025997578}
   - {fileID: 446412494}
   - {fileID: 458679366}
-  zombie: {fileID: 2650967677943526908, guid: b4ec8977eadc18d48a4bae2ffd3f772a, type: 3}
+  enemyList: []
 --- !u!4 &2034290806
 Transform:
   m_ObjectHideFlags: 0

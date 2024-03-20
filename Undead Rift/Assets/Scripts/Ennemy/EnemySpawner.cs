@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnnemySpawner : MonoBehaviour
@@ -29,12 +30,21 @@ public class EnnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if(state == SpawnState.WAITING)
+        if(state == SpawnState.WAITING && currentWave != -1)
         {
-            Debug.Log(EnemiesAreDead());
+            if (!EnemiesAreDead())
+            {
+                return;
+            }
+            else
+            {
+                CompletedWave();
+            }
+
+
         }
 
-        if(waveCountdown <= 0)
+        if(waveCountdown <= 0 && currentWave != -1)
         {
             if (state != SpawnState.SPAWNING)
             {
@@ -44,7 +54,15 @@ public class EnnemySpawner : MonoBehaviour
         }
         else
         {
-            waveCountdown -= Time.deltaTime;
+            if (currentWave != -1)
+            {
+                waveCountdown -= Time.deltaTime;
+            }
+            else 
+            { 
+                waveCountdown = 0; 
+            }
+            
         }
 
 
@@ -93,6 +111,25 @@ public class EnnemySpawner : MonoBehaviour
         }
         return true;
 
+    }
+
+    private void CompletedWave()
+    {
+        Debug.Log("Wave Completed");
+
+        state = SpawnState.COUNTING;
+        waveCountdown = timeBetweenWaves;
+
+        if(currentWave +1 > waves.Length-1)
+        {
+            currentWave = -1;
+            Debug.Log("Completed all the waves");
+        }
+        else
+        {
+            currentWave++;
+        }
+       
     }
 
 }
