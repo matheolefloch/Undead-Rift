@@ -509,7 +509,6 @@ GameObject:
   - component: {fileID: 487444454128796662}
   - component: {fileID: 8091245382316027960}
   - component: {fileID: 5417065643226704224}
-  - component: {fileID: 5976553295960782680}
   - component: {fileID: 1956393807612305632}
   - component: {fileID: 2483956288369983093}
   - component: {fileID: 4820033495724121137}
@@ -589,21 +588,6 @@ MonoBehaviour:
   upperLookLimit: 80
   lowerLookLimit: 80
   jumpForce: 8
---- !u!114 &5976553295960782680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539296711284253564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebe862d8cfe9ebf43aa98de0e1b5bc5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
-  isDead: 0
 --- !u!114 &1956393807612305632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,7 +621,7 @@ MonoBehaviour:
   - {fileID: 6832340937684890642}
   ToDisableOnlineBH:
   - {fileID: 5417065643226704224}
-  - {fileID: 5976553295960782680}
+  - {fileID: 0}
   - {fileID: 1956393807612305632}
   ToDisableLocal: {fileID: 3099651206405026625}
 --- !u!114 &4820033495724121137
