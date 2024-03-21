@@ -668,8 +668,6 @@ namespace Mirror
             if (mode == NetworkManagerMode.Host)
                 OnServerDisconnect(NetworkServer.localConnection);
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
             // ask client -> transport to disconnect.
             // handle voluntary and involuntary disconnects in OnClientDisconnect.
             //

@@ -12,6 +12,8 @@ public class Launch1 : MonoBehaviour
     private bool TimerOn; // Timer activé ou non
     private float TimeLeft; // Temps qui s'affiche
     public TextMeshProUGUI tex; // Object text.
+
+    public GameObject System;
     private bool loading = true;
     void Start()
     {
@@ -41,7 +43,8 @@ public class Launch1 : MonoBehaviour
         if (TimerOn)
         {
             if (TimeLeft < 1 && loading)  // On change de scene si le temps arrive à 0.
-            {
+            {   
+                System.SetActive(false);
                 loading = false;
                 StartCoroutine(LoadScene());
             }
