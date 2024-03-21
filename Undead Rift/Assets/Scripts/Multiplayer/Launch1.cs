@@ -11,7 +11,7 @@ public class Launch1 : MonoBehaviour
     private int MaxPlayer; // Nombre de joueur dans la partie.
     private bool TimerOn; // Timer activé ou non
     private float TimeLeft; // Temps qui s'affiche
-    public TextMeshProUGUI tex; // Object text.
+    public TextMeshProUGUI tex; // Object text à modifié.
 
     public GameObject System;
     private bool loading = true;
@@ -22,6 +22,7 @@ public class Launch1 : MonoBehaviour
         PlayerInCircle = 0;
     }
 
+    // Quand un joueur rentre dans le cercle.
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") 
@@ -29,6 +30,8 @@ public class Launch1 : MonoBehaviour
             PlayerInCircle++;
         }
     }
+
+    // Quand un joueur quitte le cercle.
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player") 
@@ -36,6 +39,7 @@ public class Launch1 : MonoBehaviour
             PlayerInCircle--;
         }
     }
+    
     void Update()
     {
         Players = GameObject.FindGameObjectsWithTag("Player");
@@ -44,9 +48,9 @@ public class Launch1 : MonoBehaviour
         {
             if (TimeLeft < 1 && loading)  // On change de scene si le temps arrive à 0.
             {   
-                System.SetActive(false);
+                System.SetActive(false); 
                 loading = false;
-                StartCoroutine(LoadScene());
+                StartCoroutine(LoadScene()); // Charge la MAP1 et transfère tous les joueurs.
             }
             else if (!Valid1(PlayerInCircle, MaxPlayer)) 
             {
@@ -86,7 +90,7 @@ public class Launch1 : MonoBehaviour
     // Valid2 renvoit s'il y'a le 3/4 des joueurs de la partie dans le cercle.
     private bool Valid2(int player, int MaxPlayer)
     {
-        if (player >= (MaxPlayer/4)*3 + MaxPlayer%2)
+        if (player >= (MaxPlayer*3)/4 + MaxPlayer%2)
             return true;
         return false;
     }
@@ -98,6 +102,7 @@ public class Launch1 : MonoBehaviour
         return false;
     }
 
+    // On change le text d'affichage.
     void Timer(int tim) 
     {
         if (tim == 1 || tim == 0)
@@ -105,17 +110,20 @@ public class Launch1 : MonoBehaviour
         else tex.text = $"Lancement dans {tim} secondes.";
     }
 
-    IEnumerator LoadScene()
+    IEnumerator LoadScene() // Appelé par StartCoroutine() lorsque le décompte tombe à 0.
     {
         Scene CurrentScene = SceneManager.GetActiveScene();
+
+        // On charge la MAP.
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MAP1", LoadSceneMode.Additive);
-        // On envoit tous les joueurs dans la scene chargée.
 
         // On attend que la scène soit bien chargée.
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
+
+        // On envoie tous les joueurs dans la scene MAP1.
         float posz = 0;
         foreach (GameObject joueur in Players)
         {   
