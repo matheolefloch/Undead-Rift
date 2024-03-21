@@ -7,6 +7,7 @@ public class PauseMenu : NetworkBehaviour
     public static bool GamePause = false;
     private NetworkManager networkManager;
     public GameObject MenuUI;
+    public Behaviour ShootScript;
 
     private void Start()
     {
@@ -20,14 +21,14 @@ public class PauseMenu : NetworkBehaviour
             if (GamePause)
             {
                 MenuUI.SetActive(false);
+                ShootScript.enabled = true;
                 Locke();
             }
             else 
             {
+                ShootScript.enabled = false;
                 MenuUI.SetActive(true);
-                GamePause = true;
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                Delocke();
             }
         }
     }

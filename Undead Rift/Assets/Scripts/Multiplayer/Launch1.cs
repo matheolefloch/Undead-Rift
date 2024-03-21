@@ -12,6 +12,7 @@ public class Launch1 : MonoBehaviour
     private bool TimerOn; // Timer activé ou non
     private float TimeLeft; // Temps qui s'affiche
     public TextMeshProUGUI tex; // Object text.
+    private bool loading = true;
     void Start()
     {
         tex.enabled = false;
@@ -39,8 +40,9 @@ public class Launch1 : MonoBehaviour
         MaxPlayer = Players.Length;
         if (TimerOn)
         {
-            if (TimeLeft < 1)  // On change de scene si le temps arrive à 0.
+            if (TimeLeft < 1 && loading)  // On change de scene si le temps arrive à 0.
             {
+                loading = false;
                 StartCoroutine(LoadScene());
             }
             else if (!Valid1(PlayerInCircle, MaxPlayer)) 
@@ -72,7 +74,7 @@ public class Launch1 : MonoBehaviour
     }
 
     // Valid1 renvoit s'il y'a autant de joueur dans le cercle que dans la partie.
-    private bool Valid1(int player, int MaxPlayer) 
+    private bool Valid3(int player, int MaxPlayer) 
     {
         if (player == MaxPlayer)
             return true;
@@ -86,7 +88,7 @@ public class Launch1 : MonoBehaviour
         return false;
     }
     // Valid3 renvoit s'il y'a la moitié des joueurs de la partie dans le cercle.
-    private bool Valid3(int player, int MaxPlayer)
+    private bool Valid1(int player, int MaxPlayer)
     {
         if (player >= MaxPlayer/2 + MaxPlayer%2)
             return true;
@@ -103,25 +105,21 @@ public class Launch1 : MonoBehaviour
     IEnumerator LoadScene()
     {
         Scene CurrentScene = SceneManager.GetActiveScene();
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MAP1");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MAP1", LoadSceneMode.Additive);
         // On envoit tous les joueurs dans la scene chargée.
-        float posz = 0;
-        foreach (GameObject joueur in Players)
-        {   
-            joueur.SetActive(false);
-            joueur.transform.position = new Vector3(-51, 17.65f, -10 + posz);
-            DontDestroyOnLoad(joueur);
-            joueur.SetActive(true);
-            posz += 10;
-        }   
+
         // On attend que la scène soit bien chargée.
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
-
-        int posx = 0; 
-        
+        float posz = 0;
+        foreach (GameObject joueur in Players)
+        {   
+            joueur.transform.position = new Vector3(-51, 17.65f, -10 + posz);
+            SceneManager.MoveGameObjectToScene(joueur, SceneManager.GetSceneByName("MAP1"));
+            posz += 10;
+        }   
         
         // On décharge la scène du lobby
         SceneManager.UnloadSceneAsync(CurrentScene);

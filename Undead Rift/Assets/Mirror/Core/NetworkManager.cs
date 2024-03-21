@@ -658,6 +658,7 @@ namespace Mirror
         /// <summary>Stops and disconnects the client.</summary>
         public void StopClient()
         {
+
             if (mode == NetworkManagerMode.Offline)
                 return;
 
@@ -667,6 +668,8 @@ namespace Mirror
             if (mode == NetworkManagerMode.Host)
                 OnServerDisconnect(NetworkServer.localConnection);
 
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             // ask client -> transport to disconnect.
             // handle voluntary and involuntary disconnects in OnClientDisconnect.
             //
