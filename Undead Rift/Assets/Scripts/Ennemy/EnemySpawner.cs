@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class EnnemySpawner : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class EnnemySpawner : MonoBehaviour
 
     [SerializeField] private float timeBetweenWaves = 3f;
     [SerializeField] private float waveCountdown = 0;
-
+    [SerializeField] TextMeshProUGUI WavesText; 
+    [SerializeField] TextMeshProUGUI CompletedText; 
     private SpawnState state = SpawnState.COUNTING;
 
     private int currentWave;
@@ -48,6 +50,7 @@ public class EnnemySpawner : MonoBehaviour
         {
             if (state != SpawnState.SPAWNING)
             {
+                CompletedText.enabled = false;
                 StartCoroutine(SpawnWave(waves[currentWave]));
             }
 
@@ -116,6 +119,8 @@ public class EnnemySpawner : MonoBehaviour
     private void CompletedWave()
     {
         Debug.Log($"Wave{currentWave} Completed");
+        CompletedText.text = $"Wave{currentWave} Completed";
+        CompletedText.enabled = true;
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
@@ -128,6 +133,7 @@ public class EnnemySpawner : MonoBehaviour
         else
         {
             currentWave++;
+            WavesText.text = $"{currentWave}";
         }
        
     }
