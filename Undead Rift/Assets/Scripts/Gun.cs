@@ -31,7 +31,7 @@ public class Gun : MonoBehaviour
     private IEnumerator Reload()
     {
         ReloadText.enabled = false;
-        
+
         gunData.reloading = true;
 
         yield return new WaitForSeconds(gunData.reloadTime);
@@ -66,7 +66,8 @@ public class Gun : MonoBehaviour
         }
         else 
         {
-            ReloadText.enabled = true;
+            if (CanShoot()) 
+                ReloadText.enabled = true;
         }
     }
 
