@@ -118,8 +118,8 @@ public class EnnemySpawner : MonoBehaviour
 
     private void CompletedWave()
     {
-        Debug.Log($"Wave{currentWave} Completed");
-        CompletedText.text = $"Wave{currentWave} Completed";
+        Debug.Log($"Vague {currentWave} terminée !");
+        CompletedText.text = $"Vague {currentWave} terminée !";
         CompletedText.enabled = true;
 
         state = SpawnState.COUNTING;

@@ -9,13 +9,13 @@ public class Gun : MonoBehaviour
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private GameObject ImpactEffect;
     public Camera fpsCamera;
-
+    // 
     float timeSinceLastShot;
     private void Start()
     {
         gunData.reloading = false;
-        PlayerShoot.shootInput += Shoot;
-        PlayerShoot.reloadInput += StartReload;
+        PlayerShoot.shootInput = Shoot;
+        PlayerShoot.reloadInput = StartReload;
     }
 
     public void StartReload()
